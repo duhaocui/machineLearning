@@ -1,3 +1,6 @@
+function [ theta ] = RunFromGivenPath( path )
+% theta is the vector of feature weights
+
 %  Linear regression with multiple variables
 %% Initialization
 
@@ -9,7 +12,7 @@ clear ; close all; clc
 fprintf('Loading data ...\n');
 
 %% Load Data
-data = load('inputTrainingSet.txt');
+data = load(path);
 X = data(:, 1:end-1);
 y = data(:, end);
 m = length(y);
@@ -68,7 +71,7 @@ fprintf('Program paused. Press enter to continue.\n');
 pause;
 
 %% ================ Part 3: Normal Equations ================
-
+%{
 fprintf('Solving with normal equations...\n');
 
 % The following code computes the closed form solution for 
@@ -97,4 +100,7 @@ price = [1, 1650, 3] * theta;
 
 fprintf(['Predicted price of a 1650 sq-ft, 3 br house ' ...
          '(using normal equations):\n $%f\n'], price);
+%}
+
+end
 
