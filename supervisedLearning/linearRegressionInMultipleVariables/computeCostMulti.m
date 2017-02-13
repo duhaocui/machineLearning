@@ -18,7 +18,7 @@ hypothesis = X * theta;
 
 % errors = mx1 column vector
 % y = mx1 column vector
-errors = hypothesis .- y;
+errors = hypothesis - y;
 
 % square all elements individually within 
 % column vector errors

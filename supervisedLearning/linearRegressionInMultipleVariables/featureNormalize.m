@@ -30,13 +30,15 @@ sigma = zeros(1, size(X, 2));
 %              sigma = 1xn row vector sigma
 %              X_norm = mxn matrix which has been normalized 
 %                       with mu and sigma
-numberOfColumnsInX_norm = columns(X_norm);
+% numberOfColumnsInX_norm = columns(X_norm);
+numberOfColumnsInX_norm = size(X_norm, 2);
 % works with input matrix X of any size
 for i = 1:numberOfColumnsInX_norm, 
 	meanOfCurrentFeatureInX = mean(X(:, i));
 	mu(:, i) = meanOfCurrentFeatureInX;
 
-	X_norm(:, i) = X_norm(:, i) .- mu(:, i);
+	%X_norm(:, i) = X_norm(:, i) .- mu(:, i);
+    X_norm(:, i) = X_norm(:, i) - mu(:, i);
 
 	standardDeviationOfCurrentFeatureInX = std(X(:, i));
 	sigma(:, i) = standardDeviationOfCurrentFeatureInX;

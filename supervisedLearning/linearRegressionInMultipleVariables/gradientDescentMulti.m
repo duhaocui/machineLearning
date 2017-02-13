@@ -22,7 +22,7 @@ for iteration = 1:numberOfIterations
 
     % errors = mx1 column vector
     % y = mx1 column vector
-    errors = hypothesis .- y;
+    errors = hypothesis - y;
 
     newDecrement = (alpha * (1/m) * errors' * X); 
     
