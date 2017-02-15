@@ -1,4 +1,4 @@
-function [ theta ] = RunFromGivenPath( path )
+function [ theta, mu, sigma ] = RunFromGivenPath( path )
 % theta is the vector of feature weights
 
 %  Linear regression with multiple variables
@@ -24,7 +24,7 @@ m = length(y);
 % Scale features and set them to zero mean
 %fprintf('Normalizing Features ...\n');
 
-[X mu sigma] = featureNormalize(X);
+[X, mu, sigma] = featureNormalize(X);
 
 % Add intercept term to X
 X = [ones(m, 1) X];
@@ -42,15 +42,15 @@ theta = zeros(size(X,2), 1);
 [theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
 
 % Plot the convergence graph
-figure;
-plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
-xlabel('Number of iterations');
-ylabel('Cost J');
+%figure;
+%plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
+%xlabel('Number of iterations');
+%ylabel('Cost J');
 
 % Display gradient descent's result
-fprintf('Theta computed from gradient descent: \n');
-fprintf(' %f \n', theta);
-fprintf('\n');
+%fprintf('Theta computed from gradient descent: \n');
+%fprintf(' %f \n', theta);
+%fprintf('\n');
 
 % Estimate the price of a 1650 sq-ft, 3 br house 
 % normalizedSquareFeet = (1650 - mu) / sigma;
