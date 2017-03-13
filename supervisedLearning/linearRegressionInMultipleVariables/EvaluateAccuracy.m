@@ -1,4 +1,4 @@
-function [ avgCorr, Correlation ] = TestAccuracy( theta, mu, sigma, index )
+function [ avgCorr, Correlation ] = EvaluateAccuracy( theta, mu, sigma, index )
 % theta - the weights of features
 % index - the index of TestQuery
 

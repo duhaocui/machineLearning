@@ -39,6 +39,7 @@ num_iters = 400;
 
 % Init Theta and Run Gradient Descent 
 theta = zeros(size(X,2), 1);
+%theta(2) = -1; % let the weight of MVIP distance is initialized as -1
 [theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
 
 % Plot the convergence graph
