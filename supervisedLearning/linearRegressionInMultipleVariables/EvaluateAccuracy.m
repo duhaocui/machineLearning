@@ -1,4 +1,5 @@
 function [ avgCorr, Correlation ] = EvaluateAccuracy( theta, mu, sigma, index )
+% doesn't use glmnet
 % theta - the weights of features
 % index - the index of TestQuery
 
